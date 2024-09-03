@@ -1,0 +1,37 @@
+<p-card
+  [header]="titulo"
+  [subheader]="subtitulo"
+  [ngClass]="{
+    'shadow-3': sombra
+  }"
+>
+  @if (imagen) {
+  <ng-template pTemplate="header">
+    <img alt="Card" [src]="imagen" class="border-round-top" />
+  </ng-template>
+  }
+
+  <p [innerHTML]="cuerpo"></p>
+  <div class="w-full">
+    @for (item of items; track $index) {
+    <p-chip [label]="item" styleClass="mx-1 my-1"></p-chip>
+    }
+  </div>
+
+  @if (botones && botones.length > 0) {
+  <ng-template pTemplate="footer">
+    <div class="flex justify-content-end">
+      @for (boton of botones; track $index) {
+      <a
+        [href]="boton.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-button font-bold surface-0 text-primary border-none"
+      >
+        {{ boton.label }}
+      </a>
+      }
+    </div>
+  </ng-template>
+  }
+</p-card>

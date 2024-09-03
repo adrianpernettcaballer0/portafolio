@@ -1,0 +1,48 @@
+<div class="flex align-items-center flex-column md:flex-row px-3">
+  <div
+    class="flex flex-column justify-content-center align-items-center col-12 md:col-2 h-screen"
+  >
+    <div class="col-12 text-center">
+      <p-avatar label="AP" styleClass="mb-3 " size="xlarge" shape="circle" />
+      <p class="p-0 m-0">Adrian Pernett</p>
+
+      <p class="text-color-secondary p-0 m-0 text-sm">Ing. de sistemas</p>
+    </div>
+    <div class="text-center col-12">
+      <a
+        href="https://www.linkedin.com/in/adrian-yiuliano-pernett-caballero/"
+        target="_blank"
+        class="no-underline mx-2"
+      >
+        <i
+          class="pi pi-linkedin text-xl text-color-secondary hover:text-primary"
+        ></i>
+      </a>
+      <a
+        href="https://github.com/adrianpernettcaballer0"
+        target="_blank"
+        class="no-underline mx-2"
+      >
+        <i
+          class="pi pi-github text-xl text-color-secondary hover:text-yellow-500"
+        ></i>
+      </a>
+    </div>
+    <p-menu [model]="items" styleClass=" mt-1"></p-menu>
+  </div>
+  <div class="col-12 md:col-10 h-95vh">
+    <p-card
+      styleClass="h-full shadow-3 surface-100 h-full   relative overflow-auto "
+    >
+      <router-outlet></router-outlet>
+    </p-card>
+  </div>
+
+  <p-button
+    [rounded]="true"
+    [icon]="thema == 'lara-dark-blue' ? 'pi pi-sun' : 'pi pi-moon'"
+    [severity]="thema == 'lara-dark-blue' ? 'secondary' : 'contrast'"
+    (onClick)="cambiarTema()"
+    styleClass="fixed top-0 right-0 mr-3 mt-3 shadow-3"
+  ></p-button>
+</div>

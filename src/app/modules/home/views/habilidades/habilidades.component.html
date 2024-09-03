@@ -1,0 +1,18 @@
+<div class="flex flex-column align-items-center justify-content-center"  id="inicio">
+  <div class="col-12 md:col-10 fadeinup animation-duration-1000">
+    <h2>Mis habilidades</h2>
+    <p>
+      He dividido mis habilidades en dos conjuntos
+      <b>(Frontend y Backend)</b> que he adquirido en a lo largo de mi formación
+      profesional y he reforzado con cursos tanto de paga como gratis.
+    </p>
+  </div>
+  <div class="col-12 md:col-10 fadeinleft animation-duration-1000">
+    <h3>Mis habilidades en frontend</h3>
+    <app-carousel [items]="habilidadesFrontend"></app-carousel>
+  </div>
+  <div class="col-12 md:col-10 fadeindown animation-duration-1000">
+    <h3>Mis habilidades en backend</h3>
+    <app-carousel [items]="habilidadesBackend"></app-carousel>
+  </div>
+</div>

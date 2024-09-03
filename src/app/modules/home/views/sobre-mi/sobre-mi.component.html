@@ -1,0 +1,72 @@
+<div class="flex justify-content-center flex-column" id="inicio">
+  @if(!esVisibleElResumen()){
+  <div
+    class="flex md:flex-row flex-column justify-content-around align-items-center"
+  >
+    <div class="col-11 lg:col-6 mt-2 lg:mt-5" style="font-size: 17px">
+      <h2 class="py-0 my-0 fadeinup animation-duration-1000">Sobre mi</h2>
+      <p class="fadeinleft animation-duration-1000">
+        Hola! Soy Adrian Pernett, un apasionado ingeniero de sistemas con
+        experiencia en el desarrollo de software con
+        <span class="text-red-500" style="font-weight: 800"> Angular js</span>
+        y
+        <span style="font-weight: 800" class="text-green-500"
+          >React js</span
+        >
+        o <span style="font-weight: 800" class="text-purple-500">Vue js</span>,
+        he participado en algunos proyectos desafiantes en los cuales he puesto
+        a prueba mis conocimientos y he adquirido muchos más.
+        <br />
+        <br />
+      </p>
+      <p-button
+        label="Ver resumen"
+        [link]="true"
+        icon="pi pi-file"
+        styleClass="p-0 m-0 fadeinleft animation-duration-1000"
+        (onClick)="gestionarVisibilidadDelResumen()"
+      />
+      <div class="fadeindown animation-duration-1000">
+        <h4 class="mx-0 px-0 mb-2">Hobbies</h4>
+
+        @for (hobbie of hobbies; track $index) {
+
+        <img
+          [src]="hobbie.img"
+          alt="hobbie"
+          style="height: 60px; height: 60px"
+          class="border-circle mx-2"
+        />
+
+        }
+      </div>
+    </div>
+    <div
+      class="col-11 lg:col-6 mt-0 lg:mt-5 fadeinright animation-duration-1000"
+    >
+      <img
+        src="https://i.pinimg.com/originals/41/7e/be/417ebee986aec41629278b1e04cfbfe9.gif"
+        style="height: 100%; width: 100%"
+        class="border-round"
+      />
+    </div>
+  </div>
+  }@else{
+  <div class="flex justify-content-center flex-column align-items-center">
+    <p-button
+      label="Ocultar resumen"
+      [link]="true"
+      icon="pi pi-eye-slash"
+      styleClass="p-0 m-0 mb-2 fadeinup animation-duration-1000"
+      (onClick)="gestionarVisibilidadDelResumen()"
+    />
+    <pdf-viewer
+      [src]="urlResumen"
+      [render-text]="true"
+      [original-size]="false"
+      style="width: 90%; height: 75vh"
+      class="fadeindown animation-duration-1000"
+    ></pdf-viewer>
+  </div>
+  }
+</div>
